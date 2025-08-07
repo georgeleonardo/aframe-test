@@ -4,7 +4,7 @@
   </head>
   <body>
     <a-scene>
-      <!-- Camera Rig -->
+      <!-- Camera rig with controllers -->
       <a-entity id="rig" position="0 1.6 0">
         <a-camera></a-camera>
         <a-entity laser-controls="hand: right"></a-entity>
@@ -21,37 +21,39 @@
         <video id="reel" src="reel.mp4" autoplay loop crossorigin="anonymous"></video>
       </a-assets>
 
-      <!-- Main Video -->
+      <!-- Main Video (vertical like a Reel) -->
       <a-video
         src="#reel"
-        width="3.2" height="1.8"
-        position="0 1.6 -5">
+        width="1.1" height="2"
+        position="0 1.6 -5"
+        rotation="0 0 0">
       </a-video>
 
-      <!-- Reflection -->
+      <!-- Reflection (flipped, semi-transparent) -->
       <a-video
         src="#reel"
-        width="3.2" height="1.8"
+        width="1.1" height="2"
         position="0 0.1 -5"
         rotation="180 0 0"
-        opacity="0.2">
+        opacity="0.15">
       </a-video>
 
-      <!-- Top Controls -->
-      <a-plane
-        color="#333"
-        width="1.5" height="0.3"
-        position="0 2.0 -1"
-        material="shader: flat">
-        <a-text value="▶︎  Pause  ⟳" align="center" position="0 0 0.01" color="#fff"></a-text>
-      </a-plane>
-
-      <!-- Bottom Username -->
+      <!-- Top Media Controls (icons are text placeholders) -->
       <a-text
-        value="@georgeleonardo"
-        color="#888"
+        value="🔇   ⛶   ✖︎"
         align="center"
-        position="0 1.0 -1">
+        position="0 2.4 -1"
+        color="#AAA"
+        width="2">
+      </a-text>
+
+      <!-- Bottom Username + Metadata -->
+      <a-text
+        value="@emannyw     1h        ..."
+        align="center"
+        position="0 1.0 -1"
+        color="#888"
+        width="2">
       </a-text>
     </a-scene>
   </body>
